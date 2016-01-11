@@ -1,0 +1,26 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block body %}
+<div class='container'>
+    <div class="col-md-12">
+    <h2>Les derniers articles</h2>
+
+    {% if articles|length == 0 %}
+    <p>Pas d'article</p>
+    {% else %}
+
+        {% for article in articles %}
+        <div class="article" data-id="{{ article.id }}">
+            <h3><a href="{{ path("article", {'id' : article.id}) }}">{{ article.title }}</a></h3>
+            <p>
+                {{ article.content|slice(0,140) ~ "..." }}
+            </p>
+        </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    </div>
+</div>
+{% endblock body %}

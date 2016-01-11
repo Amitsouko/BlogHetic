@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Hétic</title>
+
+        <link rel="stylesheet" href="{{ asset("public/css/bootstrap.min.css") }}" />
+        <link rel="stylesheet" href="{{ asset("public/css/bootstrap-theme.min.css") }}" />
+        <link rel="stylesheet" href="{{ asset("public/css/main.css") }}" />
+
+</head>
+<body>
+
+<header>
+    <section class="container">
+        <div class="col-md-6">
+            <h1>Blog Hétic</h1>
+        </div>
+        <div class="col-md-6 text-right">
+            {% render(controller("AppBundle:Default:renderRegister")) %}
+        </div>
+    </section>
+
+    <section class="container">
+    <div class="col-md-12">        
+        <ul class="list-inline">
+            <li><a href="{{ path("homepage") }}">Accueil</a></li>
+            <li><a href="{{ path("articles") }}">Tous les articles</a></li>
+            <li><a href="{{ path("contact") }}">Contact</a></li>
+        </ul>
+    </div>
+    </section>
+
+</header>
+
+<section role="main" id="main">
+        {% block body %}
+        {% endblock body %}
+</section>
+
+<footer>
+    <section class="container">
+        <div class="col-md-12 text-center">
+            <ul class="list-inline">
+                <li>Lien</li>
+                <li>Lien</li>
+                <li>Lien</li>
+                <li>Lien</li>
+            </ul>
+        </div>
+    </section>
+</footer>
+</body>
+</html>

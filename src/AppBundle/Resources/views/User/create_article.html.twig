@@ -1,0 +1,14 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block body %}
+<div class='container'>
+    <div class="col-md-12">
+
+    <h2>{{ form.title.vars.value is empty ? "Créer un article" : "Édition de : " ~ form.title.vars.value }}</h2>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock body %}
